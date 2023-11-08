@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    <title>Trabalho P2 - Banco de Dados</title>
+</head>
+<body>
+    <div>
+        <h1 class="title">BEM-VINDO!</h1>
+
+        
+        <form action="/setor" method="POST">
+            <fieldset>
+                <legend>SETOR</legend>
+                <label for="setor_nome">Nome do Setor:</label>
+                <input type="text" id="setor_nome" name="setor_nome" required><br>
+                <input type="submit" value="Adicionar">
+            </fieldset>
+        </form>
+
+
+        <form action="/funcionarios" method="POST">
+            <fieldset>
+                <legend>FUNCIONÁRIOS</legend>
+                <label for="primeiro_nome">Nome:</label>
+                <input type="text" id="primeiro_nome" name="primeiro_nome" required><br>
+                <label for="sobrenome">Sobrenome:</label>
+                <input type="text" id="sobrenome" name="sobrenome" required><br>
+                <label for="data_admissao">Data de Admissão:</label>
+                <input type="date" id="data_admissao" name="data_admissao" required><br>
+                <label for="status_funcionario">Status do Funcionário:</label>
+                <input type="text" id="status_funcionario" name="status_funcionario" required><br>
+                <label for="id_setor">ID do Setor:</label>
+                <input type="number" id="id_setor" name="id_setor" required><br>
+                <label for="id_cargo">ID do Cargo:</label>
+                <input type="number" id="id_cargo" name="id_cargo" required><br>
+                <input type="submit" value="Adicionar">
+            </fieldset>
+        </form>
+
+
+        <form action="/cargo" method="POST">
+            <fieldset>
+                <legend>CARGO</legend>
+                <label for="nome_cargo">Nome do Cargo:</label>
+                <input type="text" id="nome_cargo" name="nome_cargo" required><br>
+                <input type="submit" value="Adicionar">
+            </fieldset>
+        </form>
+    </div>    
+</body>
+</html>
