@@ -9,7 +9,7 @@ Estudante: Quézia Trindade Moura<br>
 
 <h1>Criação de Aplicação Flask</h1>
 
-<u>Descrição</u>
+<h3>Descrição</h3>
 
 - Utilizar código em anexo a atividade. para gerar o banco.
 - Utilizar o banco como modelo do código para a aplicação flask.
