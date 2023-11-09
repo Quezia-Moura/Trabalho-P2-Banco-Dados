@@ -5,8 +5,8 @@ app = Flask(__name__)
 
 connection = mysql.connector.connect(
     host="localhost",
-    user="Ryuk",
-    password="pandapag",
+    user="root",
+    password="12345678",
     database="aula_13_10"
 )
 
@@ -43,6 +43,7 @@ def adicionar_funcionario():
 
     return f'Novo funcionário criado: {primeiro_nome} {sobrenome}, Data de Admissão: {data_admissao}, Status: {status_funcionario}, Setor: {id_setor}'
 
+
 @app.route('/cargo', methods=['POST'])
 def adicionar_cargo():
     if request.method == 'POST':
@@ -51,6 +52,7 @@ def adicionar_cargo():
         db_cursor.execute(query, (nome_cargo,))
         connection.commit()
     return redirect(url_for('home'))
+
 
 if __name__ == '__main__':
     app.run(debug=True)
