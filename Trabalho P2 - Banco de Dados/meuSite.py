@@ -41,7 +41,7 @@ def adicionar_funcionario():
     )
     connection.commit()
 
-    return f'Novo funcionário criado: {primeiro_nome} {sobrenome}, Data de Admissão: {data_admissao}, Status: {status_funcionario}, Setor: {id_setor}'
+    return f'Funcionário adicionado: {primeiro_nome} {sobrenome}, Data de Admissão: {data_admissao}, Status: {status_funcionario}, Setor: {id_setor}'
 
 
 @app.route('/cargo', methods=['POST'])
