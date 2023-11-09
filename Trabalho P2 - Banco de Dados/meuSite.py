@@ -5,11 +5,10 @@ app = Flask(__name__)
 
 connection = mysql.connector.connect(
     host="localhost",
-    user="root",
-    password="12345678",
+    user="Ryuk",
+    password="pandapag",
     database="aula_13_10"
 )
-
 
 db_cursor = connection.cursor()
 
@@ -29,13 +28,12 @@ def adicionar_setor():
 
 
 @app.route('/funcionarios', methods=['POST'])
-def adicionar_funcionarios():
+def adicionar_funcionario():
     primeiro_nome = request.form['primeiro_nome']
     sobrenome = request.form['sobrenome']
     data_admissao = request.form['data_admissao']
     status_funcionario = request.form['status_funcionario']
     id_setor = request.form['id_setor']
-
 
     db_cursor.execute(
         'INSERT INTO funcionarios (primeiro_nome, sobrenome, data_admissao, status_funcionario, id_setor) VALUES (%s, %s, %s, %s, %s)',
@@ -43,8 +41,7 @@ def adicionar_funcionarios():
     )
     connection.commit()
 
-    return f'Funcionário adicionado: {primeiro_nome} {sobrenome}, Data de Admissão: {data_admissao}, Status: {status_funcionario}, Setor: {id_setor}'
-
+    return f'Novo funcionário criado: {primeiro_nome} {sobrenome}, Data de Admissão: {data_admissao}, Status: {status_funcionario}, Setor: {id_setor}'
 
 @app.route('/cargo', methods=['POST'])
 def adicionar_cargo():
@@ -54,8 +51,6 @@ def adicionar_cargo():
         db_cursor.execute(query, (nome_cargo,))
         connection.commit()
     return redirect(url_for('home'))
-
-
 
 if __name__ == '__main__':
     app.run(debug=True)
